@@ -14,7 +14,6 @@ class StoryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return ChangeNotifierProvider(
       create: (context) => DetailModel(),
       child: Consumer<DetailModel>(
@@ -26,7 +25,7 @@ class StoryWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Story ",
+                    "Movie Story",
                     style: ConfigTextStyle.regularTextStyle(17, textColor),
                   ),
                   const SizedBox(

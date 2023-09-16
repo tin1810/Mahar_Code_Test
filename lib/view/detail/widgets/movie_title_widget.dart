@@ -10,20 +10,12 @@ class MovieTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    // final genreList = List.generate(
-    //     5,
-    //     growable: true,
-    //     (index) => Container(
-    //           height: 50,
-    //           width: 100,
-    //           decoration: BoxDecoration(color: Colors.amber),
-    //         ));
+ 
     return SliverAppBar(
       floating: true,
       backgroundColor: bgColor,
       automaticallyImplyLeading: false,
-      expandedHeight: 150,
+      expandedHeight: 80,
       flexibleSpace: FlexibleSpaceBar(
         background: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +45,7 @@ class MovieTitleWidget extends StatelessWidget {
                   ),
                   Text(
                     "2h30mins",
-                    style: ConfigTextStyle.boldTextStyle(14, textColor),
+                    style: ConfigTextStyle.boldTextStyle(15, textGreyColor),
                   ),
                 ],
               ),

@@ -56,10 +56,10 @@ class ImagePoster extends StatelessWidget {
         background: Stack(
           children: [
             CachedNetworkImage(
-              // height: 200,
               imageUrl:
                   "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/51tqzRtKMMZEYUpSYkrUE7v9ehm.jpg",
-              width: double.infinity, fit: BoxFit.cover,
+              width: double.infinity,
+              fit: BoxFit.cover,
             ),
             Positioned.fill(
               child: Row(
@@ -75,8 +75,8 @@ class ImagePoster extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 10),
                       child: Text(
-                        "2023",
-                        style: ConfigTextStyle.boldTextStyle(16, Colors.black),
+                        "12-09-2023",
+                        style: ConfigTextStyle.boldTextStyle(15, Colors.black),
                       ),
                     ),
                   ),
@@ -105,7 +105,6 @@ class ImagePoster extends StatelessWidget {
                 ],
               ),
             ),
-          
           ],
         ),
       ),

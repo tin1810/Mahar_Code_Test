@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
+import 'package:mahar_code_test/view/detail/widgets/actors_list_widget.dart';
 import 'package:mahar_code_test/view/detail/widgets/genre_widget.dart';
 
 import 'package:mahar_code_test/view/detail/widgets/image_poster.dart';
@@ -13,11 +15,11 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> items = [
-      'Item 1',
-      'Item 2',
-      'Item 3',
-      'Item 3',
-      'Item 3',
+      'Adventure',
+      'Horror',
+      'Thriller',
+      'Romantic',
+      'Physco',
     ];
 
     return Scaffold(
@@ -29,6 +31,7 @@ class DetailPage extends StatelessWidget {
           const MovieTitleWidget(),
           GenreWidget(items: items),
           const StoryWidget(),
+          ActorsListWiget(items: items),
         ],
       ),
     );
