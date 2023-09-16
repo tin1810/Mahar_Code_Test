@@ -4,21 +4,15 @@ import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
 import 'package:mahar_code_test/view/search/widgets/search_list_tile.dart';
 
-class SearchPage extends StatefulWidget {
-  final int? ownCoin;
-  const SearchPage({
+class SearchPage extends StatelessWidget {
+  SearchPage({
     super.key,
-    this.ownCoin,
   });
 
-  @override
-  State<SearchPage> createState() => _SearchPageState();
-}
-
-class _SearchPageState extends State<SearchPage> {
   final searchController = TextEditingController();
 
   String? value;
+
   @override
   @override
   @override
@@ -40,10 +34,7 @@ class _SearchPageState extends State<SearchPage> {
             padding: const EdgeInsets.only(top: 10, bottom: 10),
             child: TextFormField(
               controller: searchController,
-              onChanged: (val) {
-                // final val = searchController.text;
-                // context.read<SearchBloc>().add(GetSearchBook(searchWord: val));
-              },
+              onChanged: (val) {},
               autofocus: true,
               cursorColor: textColor,
               style: ConfigTextStyle.regularTextStyle(16, textColor),
@@ -62,7 +53,7 @@ class _SearchPageState extends State<SearchPage> {
                         size: 18,
                         color: disableColor,
                       )),
-                  hintText: "Comic များရှာဖွေရန်",
+                  hintText: "Find movie in here",
                   border: InputBorder.none,
                   hintStyle: ConfigTextStyle.boldTextStyle(16, textColor)),
             ),

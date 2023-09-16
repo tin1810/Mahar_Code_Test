@@ -68,7 +68,7 @@ AppBar appBarWidget(BuildContext context) {
     actions: [
       IconButton(
           onPressed: () {
-            Routes.transition(context, const SearchPage());
+            Routes.transition(context, SearchPage());
           },
           icon: Container(
             height: 35,

@@ -10,21 +10,24 @@ class SearchListTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 115,
+      height: 150,
       width: double.infinity,
       margin: const EdgeInsets.only(left: 16, right: 16, top: 20),
       child: Row(
         children: [
-          CachedNetworkImage(
-            height: double.infinity,
-            width: 72,
-            fit: BoxFit.cover,
-            fadeInCurve: Curves.easeIn,
-            imageUrl:
-                "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hUJ0UvQ5tgE2Z9WpfuduVSdiCiU.jpg",
-            placeholder: (context, url) =>
-                const Center(child: CircularProgressIndicator()),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: CachedNetworkImage(
+              height: double.infinity,
+              width: 100,
+              fit: BoxFit.cover,
+              fadeInCurve: Curves.easeIn,
+              imageUrl:
+                  "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hUJ0UvQ5tgE2Z9WpfuduVSdiCiU.jpg",
+              placeholder: (context, url) =>
+                  const Center(child: CircularProgressIndicator()),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+            ),
           ),
           const SizedBox(
             width: 15,
