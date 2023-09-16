@@ -21,7 +21,20 @@ class ImagePoster extends StatelessWidget {
               size: 23,
             ));
     return SliverAppBar(
+      floating: false,
       automaticallyImplyLeading: false,
+      actions: [
+        IconButton(
+            onPressed: () {},
+            icon: const Padding(
+              padding: EdgeInsets.only(right: 16),
+              child: Icon(
+                Icons.favorite_border,
+                color: redColor,
+                size: 30,
+              ),
+            ))
+      ],
       leading: Container(
         height: 20,
         width: 20,
@@ -91,7 +104,8 @@ class ImagePoster extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
+          
           ],
         ),
       ),
