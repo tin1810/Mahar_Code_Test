@@ -5,7 +5,7 @@ import 'package:mahar_code_test/config/config_text_style.dart';
 
 class SearchListTileWidget extends StatelessWidget {
   final String title;
-  const SearchListTileWidget({super.key,required this.title});
+  const SearchListTileWidget({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,10 @@ class SearchListTileWidget extends StatelessWidget {
             imageUrl:
                 "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hUJ0UvQ5tgE2Z9WpfuduVSdiCiU.jpg",
             placeholder: (context, url) =>
-                Center(child: CircularProgressIndicator()),
-            errorWidget: (context, url, error) => Icon(Icons.error),
+                const Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
-          SizedBox(
+          const SizedBox(
             width: 15,
           ),
           Expanded(

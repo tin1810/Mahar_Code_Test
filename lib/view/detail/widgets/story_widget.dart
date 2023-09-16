@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/model/detail_model.dart';
 import 'package:provider/provider.dart';
-
 import '../../../config/config_text_style.dart';
 
 class StoryWidget extends StatelessWidget {
@@ -39,7 +38,6 @@ class StoryWidget extends StatelessWidget {
                         style:
                             ConfigTextStyle.regularTextStyle(14, textGreyColor),
                       ),
-
                       Center(
                         child: Padding(
                           padding: const EdgeInsets.only(top: 10),
@@ -62,22 +60,6 @@ class StoryWidget extends StatelessWidget {
                           ),
                         ),
                       )
-                      // Container(
-                      //   height: 50,
-                      //   width: 100,
-                      //   decoration: const BoxDecoration(color: blueBoxColor),
-                      //   alignment: Alignment.centerLeft,
-                      //   padding: const EdgeInsets.only(left: 16),
-                      //   child: GestureDetector(
-                      //     child: Text(
-                      //       detail.isReadMore ? "Less" : "Read More",
-                      //       style: ConfigTextStyle.boldTextStyle(13, textColor),
-                      //     ),
-                      //     onTap: () {
-                      //       detail.toggleReadMore();
-                      //     },
-                      //   ),
-                      // ),
                     ],
                   ),
                 ],

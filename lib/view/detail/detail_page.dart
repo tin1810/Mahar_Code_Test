@@ -1,7 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
-import 'package:mahar_code_test/config/config_text_style.dart';
+
 import 'package:mahar_code_test/view/detail/widgets/actors_list_widget.dart';
 import 'package:mahar_code_test/view/detail/widgets/genre_widget.dart';
 

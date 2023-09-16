@@ -19,9 +19,6 @@ class GridViewWidget extends StatelessWidget {
             fit: BoxFit.cover,
             fadeInCurve: Curves.easeIn,
             imageUrl: imageUrl,
-            // imageUrl: "${ConfigUrl.imagebaseUrl}/$url",
-            // placeholder: (context, url) =>
-            //     Image.asset("assets/images/Placeholder.jpg"),
             errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),

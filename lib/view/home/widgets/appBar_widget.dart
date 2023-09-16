@@ -4,7 +4,6 @@ import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
 import 'package:mahar_code_test/view/search/search_page.dart';
-import 'package:page_transition/page_transition.dart';
 
 AppBar appBarWidget(BuildContext context) {
   return AppBar(
@@ -44,7 +43,7 @@ AppBar appBarWidget(BuildContext context) {
                     "assets/icons/play-circle-svgrepo-com.svg",
                     color: yellowColor,
                   ),
-                  Tab(
+                  const Tab(
                     text: 'Now Playing',
                   ),
                 ],
@@ -52,7 +51,7 @@ AppBar appBarWidget(BuildContext context) {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Tab(text: 'Popular'),
+                  const Tab(text: 'Popular'),
                   SvgPicture.asset(
                     "assets/icons/flame-fire-svgrepo-com.svg",
                     height: 18,
