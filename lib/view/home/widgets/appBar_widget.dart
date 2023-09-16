@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
@@ -27,28 +28,39 @@ AppBar appBarWidget(BuildContext context) {
             borderRadius: BorderRadius.circular(20),
           ),
           child: TabBar(
-            padding: const EdgeInsets.all(2),
-            unselectedLabelColor: Colors.grey,
-            unselectedLabelStyle: ConfigTextStyle.boldTextStyle(16, textColor),
-            indicator: ShapeDecoration(
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(15))),
+            indicator: BoxDecoration(
               color: blueBoxColor.withOpacity(0.5),
+              borderRadius: BorderRadius.circular(17),
             ),
-            indicatorSize: TabBarIndicatorSize.tab,
-            labelStyle: ConfigTextStyle.boldTextStyle(16, textColor),
             labelColor: textColor,
-            tabs: const [
+            labelStyle: ConfigTextStyle.boldTextStyle(16, textColor),
+            dividerColor: Colors.black,
+            unselectedLabelColor: Colors.grey,
+            tabs: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Icon(Icons.watch_later),
+                  SvgPicture.asset(
+                    "assets/icons/play-circle-svgrepo-com.svg",
+                    color: yellowColor,
+                  ),
                   Tab(
                     text: 'Now Playing',
                   ),
                 ],
               ),
-              Tab(text: 'Popular'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Tab(text: 'Popular'),
+                  SvgPicture.asset(
+                    "assets/icons/flame-fire-svgrepo-com.svg",
+                    height: 18,
+                    width: 18,
+                    color: redColor,
+                  )
+                ],
+              ),
             ],
           ),
         ),
