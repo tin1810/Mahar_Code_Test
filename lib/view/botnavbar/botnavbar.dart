@@ -19,7 +19,7 @@ class _BotNavBarState extends State<BotNavBar> {
   Widget build(BuildContext context) {
     List pages = [
       HomePage(),
-      const DetailPage(),
+      // const DetailPage(),
       const FavoritePage(),
     ];
     return Scaffold(
@@ -42,14 +42,14 @@ class _BotNavBarState extends State<BotNavBar> {
             text: 'Home',
             textColor: textColor,
           ),
-          GButton(
-            padding: EdgeInsets.all(10),
-            icon: Icons.movie,
-            iconActiveColor: yellowColor,
-            text: 'Detail',
-            iconColor: textColor,
-            textColor: textColor,
-          ),
+          // GButton(
+          //   padding: EdgeInsets.all(10),
+          //   icon: Icons.movie,
+          //   iconActiveColor: yellowColor,
+          //   text: 'Detail',
+          //   iconColor: textColor,
+          //   textColor: textColor,
+          // ),
           GButton(
             padding: EdgeInsets.all(10),
             icon: Icons.favorite,

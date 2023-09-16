@@ -9,32 +9,25 @@ import 'package:mahar_code_test/view/nowplaying/now_playing.dart';
 import 'package:mahar_code_test/view/popular/popular_widget.dart';
 
 class HomePage extends StatefulWidget {
-  int? pageIndex;
-  HomePage({super.key, this.pageIndex});
+  const HomePage({
+    super.key,
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int current = 0;
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         backgroundColor: bgColor,
-        appBar: appBarWidget(),
+        appBar: appBarWidget(context),
         body: const TabBarView(
           children: [NowPlayingWidget(), PopularWidget()],
         ),
-     
-   
       ),
     );
   }

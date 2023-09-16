@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
+import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
+import 'package:mahar_code_test/view/search/search_page.dart';
+import 'package:page_transition/page_transition.dart';
 
-AppBar appBarWidget() {
+AppBar appBarWidget(BuildContext context) {
   return AppBar(
     elevation: 0,
     backgroundColor: bgColor,
@@ -11,7 +14,7 @@ AppBar appBarWidget() {
       style: ConfigTextStyle.boldTextStyle(17, textColor),
     ),
     bottom: PreferredSize(
-      preferredSize: new Size(80, 80),
+      preferredSize: const Size(80, 80),
       child: Container(
         color: Colors.transparent,
         padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
@@ -21,49 +24,41 @@ AppBar appBarWidget() {
           padding: const EdgeInsets.fromLTRB(4, 4, 4, 4),
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(20),
           ),
           child: TabBar(
+            padding: const EdgeInsets.all(2),
             unselectedLabelColor: Colors.grey,
             unselectedLabelStyle: ConfigTextStyle.boldTextStyle(16, textColor),
-            indicator: const ShapeDecoration(
-              shape: StadiumBorder(side: BorderSide.none),
-              color: blueBoxColor,
+            indicator: ShapeDecoration(
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(15))),
+              color: blueBoxColor.withOpacity(0.5),
             ),
+            indicatorSize: TabBarIndicatorSize.tab,
             labelStyle: ConfigTextStyle.boldTextStyle(16, textColor),
-            tabs: [
-              const Row(
+            labelColor: textColor,
+            tabs: const [
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Icon(Icons.watch_later),
                   Tab(
-                    text: 'Now Showing',
+                    text: 'Now Playing',
                   ),
                 ],
               ),
-              const Tab(text: 'Coming Soon'),
+              Tab(text: 'Popular'),
             ],
           ),
         ),
       ),
     ),
-    // bottom: const TabBar(
-    //   dividerColor: Colors.amber,
-    //   labelColor: blueBoxColor,
-    //   indicatorColor: lightBlueColor,
-    //   unselectedLabelColor: textColor,
-    //   tabs: [
-    //     Tab(
-    //       text: "Now Playing",
-    //     ),
-    //     Tab(
-    //       text: "Popular",
-    //     ),
-    //   ],
-    // ),
     actions: [
       IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Routes.transition(context, const SearchPage());
+          },
           icon: Container(
             height: 35,
             width: 35,

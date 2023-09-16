@@ -15,7 +15,7 @@ class ImageSliderWidget extends StatelessWidget {
           5,
           (index) => const ImageWidget(
             imageUrl:
-                "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/p7I17l9jRI146JvNb4oo3STOTmV.jpg",
+                "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/irEqWPmDqCuzsItzefFxX3xWpL8.jpg",
           ),
         ),
         options: CarouselOptions(
