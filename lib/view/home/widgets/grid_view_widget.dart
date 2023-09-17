@@ -5,7 +5,13 @@ import 'package:mahar_code_test/config/config_text_style.dart';
 
 class GridViewWidget extends StatelessWidget {
   final String imageUrl;
-  const GridViewWidget({super.key, required this.imageUrl});
+  final String title;
+  final double voteAverage;
+  const GridViewWidget(
+      {super.key,
+      required this.imageUrl,
+      required this.title,
+      required this.voteAverage});
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +31,16 @@ class GridViewWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 7, bottom: 3),
           child: Text(
-            "Hi hi",
-            maxLines: 2,
+            title,
+            maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: ConfigTextStyle.regularTextStyle(13, textColor),
           ),
         ),
         Text(
-          maxLines: 2,
+          maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          "Hi hi",
+          voteAverage.toString(),
           style: ConfigTextStyle.boldTextStyle(12, textColor),
         ),
       ]),

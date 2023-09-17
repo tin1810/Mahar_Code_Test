@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DetailModel extends ChangeNotifier {
+class DetailProvider extends ChangeNotifier {
   bool _isReadMore = false;
 
   bool get isReadMore => _isReadMore;

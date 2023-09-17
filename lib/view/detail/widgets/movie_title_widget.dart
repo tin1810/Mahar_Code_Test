@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
+import 'package:mahar_code_test/vo/now_playing_vo.dart';
 
 class MovieTitleWidget extends StatelessWidget {
+  final MovieVO movieDetail;
   const MovieTitleWidget({
     super.key,
+    required this.movieDetail,
   });
 
   @override
   Widget build(BuildContext context) {
- 
     return SliverAppBar(
       floating: true,
       backgroundColor: bgColor,
@@ -23,7 +25,7 @@ class MovieTitleWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 13, left: 16),
               child: Text(
-                "Gran Turismo",
+                movieDetail.originalTitle ?? "",
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: ConfigTextStyle.boldTextStyle(18, textColor),

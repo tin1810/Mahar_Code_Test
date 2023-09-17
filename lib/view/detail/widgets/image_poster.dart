@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
+import 'package:mahar_code_test/vo/now_playing_vo.dart';
 
 class ImagePoster extends StatelessWidget {
+  final MovieVO movieDetail;
+
   const ImagePoster({
     super.key,
+    required this.movieDetail,
   });
 
   @override
@@ -73,7 +77,7 @@ class ImagePoster extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 10),
                       child: Text(
-                        "12-09-2023",
+                       movieDetail.releaseDate??"",
                         style: ConfigTextStyle.boldTextStyle(15, Colors.black),
                       ),
                     ),

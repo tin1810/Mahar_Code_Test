@@ -1,21 +1,25 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:mahar_code_test/config/api_constant.dart';
 import 'package:mahar_code_test/view/home/widgets/image_widget.dart';
+import 'package:mahar_code_test/vo/now_playing_vo.dart';
 
 class ImageSliderWidget extends StatelessWidget {
+  final List<MovieVO> movieList;
   const ImageSliderWidget({
     super.key,
+    required this.movieList,
   });
 
   @override
   Widget build(BuildContext context) {
+    List<MovieVO> firstFiveMovies = movieList.take(5).toList();
     double screenHeight = MediaQuery.of(context).size.height;
     return CarouselSlider(
         items: List.generate(
-          5,
-          (index) => const ImageWidget(
-            imageUrl:
-                "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/irEqWPmDqCuzsItzefFxX3xWpL8.jpg",
+          firstFiveMovies.length,
+          (index) => ImageWidget(
+            imageUrl: "$IMAGE_URL${firstFiveMovies[index].backdropPath}",
           ),
         ),
         options: CarouselOptions(

@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
-import 'package:mahar_code_test/model/detail_model.dart';
+
+import 'package:mahar_code_test/provider/detail_provider.dart';
 import 'package:provider/provider.dart';
 import '../../../config/config_text_style.dart';
 
@@ -14,8 +15,8 @@ class StoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => DetailModel(),
-      child: Consumer<DetailModel>(
+      create: (context) => DetailProvider(),
+      child: Consumer<DetailProvider>(
         builder: (context, detail, _) {
           return SliverToBoxAdapter(
             child: Padding(

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:mahar_code_test/config/api_constant.dart';
 import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/view/home/widgets/grid_view_widget.dart';
+import 'package:mahar_code_test/vo/now_playing_vo.dart';
 import '../../detail/detail_page.dart';
 
 class GridWidget extends StatelessWidget {
+  final List<MovieVO> movieList;
   const GridWidget({
     super.key,
+    required this.movieList,
   });
 
   @override
@@ -18,15 +22,20 @@ class GridWidget extends StatelessWidget {
             childAspectRatio: 0.65,
             crossAxisSpacing: 40,
             mainAxisSpacing: 2),
-        itemCount: 10,
+        itemCount: movieList.length,
         itemBuilder: (BuildContext ctx, index) {
           return InkWell(
             onTap: () {
-              Routes.transition(context, const DetailPage());
+              Routes.transition(
+                  context,
+                  DetailPage(
+                    movieDetail: movieList[index],
+                  ));
             },
-            child: const GridViewWidget(
-              imageUrl:
-                  "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/p7I17l9jRI146JvNb4oo3STOTmV.jpg",
+            child: GridViewWidget(
+              imageUrl: "$IMAGE_URL${movieList[index].posterPath}",
+              title: movieList[index].originalTitle ?? "",
+              voteAverage: movieList[index].voteAverage ?? 0.0,
             ),
           );
         });
