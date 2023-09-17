@@ -2,7 +2,8 @@
 /// Base Url
 
 const String BASE_URL = "https://api.themoviedb.org/";
-const String IMAGE_URL = "https://image.tmdb.org/t/p/w400";
+
+const String IMAGE_URL = "https://image.tmdb.org/t/p/original";
 
 /// End Points
 const String ENDPOINT_GET_NOW_PLAYING = "3/movie/now_playing";
