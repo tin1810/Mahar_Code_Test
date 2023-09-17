@@ -4,3 +4,11 @@ List<String> movieTabs(context) {
     "Popular",
   ];
 }
+
+List<String> Actors = [
+  'Leonado',
+  'The Rocks',
+  'Robert',
+  'Scarlett',
+  'Toby',
+];

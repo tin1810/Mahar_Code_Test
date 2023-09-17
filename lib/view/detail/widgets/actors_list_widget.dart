@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
+import 'package:mahar_code_test/config/config_data.dart';
 
 import '../../../config/config_text_style.dart';
 
 class ActorsListWiget extends StatelessWidget {
+  final List<String> items;
+
   const ActorsListWiget({
     super.key,
     required this.items,
   });
-
-  final List<String> items;
 
   @override
   Widget build(BuildContext context) {

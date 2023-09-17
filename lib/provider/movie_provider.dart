@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/service/api_repository.dart';
 import 'package:mahar_code_test/vo/genre_vo.dart';
+import 'package:mahar_code_test/vo/movie_detail_vo.dart';
 import 'package:mahar_code_test/vo/now_playing_vo.dart';
 
 import '../service/api_repository_impl.dart';
@@ -20,6 +21,7 @@ class MovieProvider extends ChangeNotifier {
   List<MovieVO> popular = [];
   List<GenreVO> genre = [];
   List<MovieVO> searchResults = [];
+
   MovieProvider() {
     _showLoading();
     _apiRepository.getNowPlaying().then((nowmovieList) {
@@ -37,6 +39,7 @@ class MovieProvider extends ChangeNotifier {
       _notifySafely();
       _hideLoading();
     });
+
   }
 
   ///search

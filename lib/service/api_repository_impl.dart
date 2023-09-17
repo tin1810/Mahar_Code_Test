@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:mahar_code_test/config/api_constant.dart';
 import 'package:mahar_code_test/service/api_repository.dart';
 import 'package:mahar_code_test/vo/genre_vo.dart';
+import 'package:mahar_code_test/vo/movie_detail_vo.dart';
 import 'package:mahar_code_test/vo/now_playing_vo.dart';
 
 class ApiRepositoryImpl extends ApiRepository {
@@ -62,6 +63,24 @@ class ApiRepositoryImpl extends ApiRepository {
         List<dynamic> responseData = response.data["genres"];
 
         return responseData.map((e) => GenreVO.fromJson(e)).toList();
+      } else {
+        throw Exception('Failed to load genre list');
+      }
+    } catch (e) {
+      throw Exception('Error: $e');
+    }
+  }
+
+  @override
+  Future<MovieDetailVO> getDetail(int movieId) async {
+    try {
+      final response = await _dio.get("$ENDPOINT_GET_MOVIE_DETAIL/$movieId",
+          queryParameters: {"api_key": API_KEY});
+
+      if (response.statusCode == 200) {
+        var responseData = response.data;
+
+        return MovieDetailVO.fromJson(responseData);
       } else {
         throw Exception('Failed to load genre list');
       }

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:mahar_code_test/config/api_constant.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
@@ -7,10 +8,12 @@ import 'package:mahar_code_test/vo/now_playing_vo.dart';
 
 class ImagePoster extends StatelessWidget {
   final MovieVO movieDetail;
-
+  final Function onClicked;
+  final bool isFavorite;
   const ImagePoster({
     super.key,
     required this.movieDetail,
+    required this.onClicked, required this.isFavorite,
   });
 
   @override
@@ -27,10 +30,18 @@ class ImagePoster extends StatelessWidget {
       automaticallyImplyLeading: false,
       actions: [
         IconButton(
-            onPressed: () {},
-            icon: const Padding(
-              padding: EdgeInsets.only(right: 16),
-              child: Icon(
+            onPressed: () {
+              onClicked();
+            },
+            icon:  Padding(
+              padding: const EdgeInsets.only(right: 16),
+              child:
+              isFavorite? const Icon(
+                Icons.favorite,
+                color: redColor,
+                size: 30,
+              ):
+               const Icon(
                 Icons.favorite_border,
                 color: redColor,
                 size: 30,
@@ -53,35 +64,20 @@ class ImagePoster extends StatelessWidget {
               color: textColor,
             )),
       ),
-      expandedHeight: 300,
+      expandedHeight: 200,
       flexibleSpace: FlexibleSpaceBar(
         background: Stack(
           children: [
             CachedNetworkImage(
-              imageUrl:
-                  "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/51tqzRtKMMZEYUpSYkrUE7v9ehm.jpg",
+              imageUrl: "$IMAGE_URL${movieDetail.backdropPath}",
               width: double.infinity,
               fit: BoxFit.cover,
             ),
             Positioned.fill(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    margin: const EdgeInsets.all(20),
-                    color: yellowColor,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      child: Text(
-                       movieDetail.releaseDate??"",
-                        style: ConfigTextStyle.boldTextStyle(15, Colors.black),
-                      ),
-                    ),
-                  ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20, bottom: 20),
                     child: Column(
