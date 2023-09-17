@@ -9,9 +9,11 @@ import 'imdb_widget.dart';
 
 class MovieTitleWidget extends StatelessWidget {
   final MovieVO movieDetail;
+  final String duration;
   const MovieTitleWidget({
     super.key,
     required this.movieDetail,
+    required this.duration,
   });
 
   @override
@@ -83,7 +85,7 @@ class MovieTitleWidget extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
                             child: Text(
-                              "2h30mins",
+                              "${duration} mins",
                               style: ConfigTextStyle.boldTextStyle(
                                   15, textGreyColor),
                             ),

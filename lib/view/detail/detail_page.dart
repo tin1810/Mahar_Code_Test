@@ -40,8 +40,12 @@ class DetailPage extends StatelessWidget {
                               isFavorite: provider.isFavorite,
                               votes: provider.movieDetailVO?.voteCount ?? 0,
                             )),
-                    MovieTitleWidget(
-                      movieDetail: movieDetail,
+                    Consumer<DetailProvider>(
+                      builder: (context, provider, child) => MovieTitleWidget(
+                        movieDetail: movieDetail,
+                        duration:
+                            provider.movieDetailVO?.runtime?.toString() ?? "",
+                      ),
                     ),
                     Consumer<DetailProvider>(
                         builder: (context, provider, child) => GenreWidget(
