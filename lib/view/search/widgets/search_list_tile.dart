@@ -5,7 +5,8 @@ import 'package:mahar_code_test/config/config_text_style.dart';
 
 class SearchListTileWidget extends StatelessWidget {
   final String title;
-  const SearchListTileWidget({super.key, required this.title});
+  final String imageUrl;
+  const SearchListTileWidget({super.key, required this.title, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,8 @@ class SearchListTileWidget extends StatelessWidget {
               width: 100,
               fit: BoxFit.cover,
               fadeInCurve: Curves.easeIn,
-              imageUrl:
-                  "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hUJ0UvQ5tgE2Z9WpfuduVSdiCiU.jpg",
+              imageUrl:imageUrl
+                 ,
               placeholder: (context, url) =>
                   const Center(child: CircularProgressIndicator()),
               errorWidget: (context, url, error) => const Icon(Icons.error),
@@ -36,9 +37,9 @@ class SearchListTileWidget extends StatelessWidget {
             child: Text(
               title,
               maxLines: 2,
-              style: ConfigTextStyle.boldTextStyle(14, textColor),
+              style: ConfigTextStyle.boldTextStyle(16, textColor),
             ),
-          )
+          ),
         ],
       ),
     );

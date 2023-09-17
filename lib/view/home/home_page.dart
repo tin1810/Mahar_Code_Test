@@ -35,11 +35,13 @@ class _HomePageState extends State<HomePage> {
                       Consumer<MovieProvider>(
                         builder: (context, provider, child) => NowPlayingWidget(
                           movieList: provider.nowPlaying,
+                          genreList: provider.genre,
                         ),
                       ),
                       Consumer<MovieProvider>(
                         builder: (context, provider, child) => PopularWidget(
                           movieList: provider.popular,
+                          genreList: provider.genre,
                         ),
                       )
                     ],

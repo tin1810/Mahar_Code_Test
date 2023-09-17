@@ -40,7 +40,7 @@ class GridViewWidget extends StatelessWidget {
         Text(
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          voteAverage.toString(),
+          "$voteAverage Votes",
           style: ConfigTextStyle.boldTextStyle(12, textColor),
         ),
       ]),

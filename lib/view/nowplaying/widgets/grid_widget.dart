@@ -24,13 +24,14 @@ class GridWidget extends StatelessWidget {
             mainAxisSpacing: 2),
         itemCount: movieList.length,
         itemBuilder: (BuildContext ctx, index) {
-          return InkWell(
+          return GestureDetector(
             onTap: () {
               Routes.transition(
-                  context,
-                  DetailPage(
-                    movieDetail: movieList[index],
-                  ));
+                context,
+                DetailPage(
+                  movieDetail: movieList[index],
+                ),
+              );
             },
             child: GridViewWidget(
               imageUrl: "$IMAGE_URL${movieList[index].posterPath}",

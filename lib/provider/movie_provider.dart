@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/service/api_repository.dart';
+import 'package:mahar_code_test/vo/genre_vo.dart';
 import 'package:mahar_code_test/vo/now_playing_vo.dart';
 
 import '../service/api_repository_impl.dart';
@@ -17,7 +18,8 @@ class MovieProvider extends ChangeNotifier {
   /// states
   List<MovieVO> nowPlaying = [];
   List<MovieVO> popular = [];
-
+  List<GenreVO> genre = [];
+  List<MovieVO> searchResults = [];
   MovieProvider() {
     _showLoading();
     _apiRepository.getNowPlaying().then((nowmovieList) {
@@ -30,6 +32,31 @@ class MovieProvider extends ChangeNotifier {
       _notifySafely();
       _hideLoading();
     });
+    _apiRepository.getGenre().then((genreList) {
+      genre = genreList;
+      _notifySafely();
+      _hideLoading();
+    });
+  }
+
+  ///search
+  void search(String query) {
+    final combinedMovies = [...nowPlaying, ...popular];
+
+    final uniqueMovies = <MovieVO>[];
+    for (final movie in combinedMovies) {
+      final movieTitle = movie.title?.toLowerCase();
+      final isUnique = uniqueMovies.every(
+          (uniqueMovie) => uniqueMovie.title?.toLowerCase() != movieTitle);
+      if (isUnique &&
+          movieTitle != null &&
+          movieTitle.contains(query.toLowerCase())) {
+        uniqueMovies.add(movie);
+      }
+    }
+
+    searchResults = uniqueMovies;
+    notifyListeners();
   }
 
   /// loading situations
