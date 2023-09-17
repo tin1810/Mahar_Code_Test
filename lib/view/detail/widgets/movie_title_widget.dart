@@ -5,6 +5,8 @@ import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
 import 'package:mahar_code_test/vo/now_playing_vo.dart';
 
+import 'imdb_widget.dart';
+
 class MovieTitleWidget extends StatelessWidget {
   final MovieVO movieDetail;
   const MovieTitleWidget({
@@ -52,27 +54,15 @@ class MovieTitleWidget extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
-                            height: 20,
-                            width: 30,
-                            margin:
-                                EdgeInsets.only(left: 16, right: 10, top: 10),
-                            decoration: BoxDecoration(
-                                color: yellowColor,
-                                borderRadius: BorderRadius.circular(5)),
-                            child: Center(
-                              child: Text(
-                                "IMDB",
-                                textAlign: TextAlign.center,
-                                style: ConfigTextStyle.boldTextStyle(
-                                    10, Colors.black),
-                              ),
-                            ),
+                          const Padding(
+                            padding:
+                                EdgeInsets.only(left: 16, top: 10, right: 10),
+                            child: IMDBWidget(),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
                             child: Text(
-                              "7.2",
+                              movieDetail.voteAverage.toString(),
                               style: ConfigTextStyle.boldTextStyle(
                                   15, textGreyColor),
                             ),
@@ -100,16 +90,16 @@ class MovieTitleWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
                         height: 70,
                         width: 110,
-                        margin: EdgeInsets.only(left: 16),
+                        margin: const EdgeInsets.only(left: 16),
                         decoration: BoxDecoration(
                             color: iconBgcolor.withOpacity(0.5),
                             borderRadius: BorderRadius.circular(10)),

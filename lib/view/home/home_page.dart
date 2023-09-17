@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                           movieList: provider.popular,
                           genreList: provider.genre,
                         ),
-                      )
+                      ),
                     ],
                   ),
                   Visibility(

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
+import 'package:mahar_code_test/view/detail/widgets/imdb_widget.dart';
 
 class GridViewWidget extends StatelessWidget {
   final String imageUrl;
@@ -37,11 +38,20 @@ class GridViewWidget extends StatelessWidget {
             style: ConfigTextStyle.regularTextStyle(13, textColor),
           ),
         ),
-        Text(
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          "$voteAverage Votes",
-          style: ConfigTextStyle.boldTextStyle(12, textColor),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            IMDBWidget(),
+            SizedBox(
+              width: 4,
+            ),
+            Text(
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              "$voteAverage",
+              style: ConfigTextStyle.boldTextStyle(12, textColor),
+            ),
+          ],
         ),
       ]),
     );

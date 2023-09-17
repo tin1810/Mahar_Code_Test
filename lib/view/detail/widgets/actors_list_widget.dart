@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
-import 'package:mahar_code_test/config/config_data.dart';
+
 
 import '../../../config/config_text_style.dart';
 

@@ -18,8 +18,8 @@ class GridWidget extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 270,
-            childAspectRatio: 0.65,
+            maxCrossAxisExtent: 320,
+            childAspectRatio: 0.6,
             crossAxisSpacing: 40,
             mainAxisSpacing: 2),
         itemCount: movieList.length,
