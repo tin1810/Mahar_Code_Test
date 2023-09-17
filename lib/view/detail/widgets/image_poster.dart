@@ -67,14 +67,13 @@ class ImagePoster extends StatelessWidget {
               color: textColor,
             )),
       ),
-      expandedHeight: 200,
+      expandedHeight: 170,
       flexibleSpace: FlexibleSpaceBar(
         background: Stack(
           children: [
             CachedNetworkImage(
               imageUrl: "$IMAGE_URL${movieDetail.backdropPath}",
-              width: double.infinity,
-              fit: BoxFit.fill,
+              fit: BoxFit.fitWidth,
             ),
             Positioned.fill(
               child: Row(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 
-
 import '../../../config/config_text_style.dart';
 
 class ActorsListWiget extends StatelessWidget {
@@ -41,7 +40,6 @@ class ActorsListWiget extends StatelessWidget {
 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.amber,
                       image: const DecorationImage(
                           image: NetworkImage(
                               "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/nJeiS9Zi1GTKD7JXFHyVJ1Edd0H.jpg"),
