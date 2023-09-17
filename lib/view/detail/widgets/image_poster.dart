@@ -4,7 +4,7 @@ import 'package:mahar_code_test/config/api_constant.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
-import 'package:mahar_code_test/vo/now_playing_vo.dart';
+import 'package:mahar_code_test/vo/movie_vo.dart';
 
 class ImagePoster extends StatelessWidget {
   final MovieVO movieDetail;
@@ -15,7 +15,8 @@ class ImagePoster extends StatelessWidget {
     super.key,
     required this.movieDetail,
     required this.onClicked,
-    required this.isFavorite, required this.votes,
+    required this.isFavorite,
+    required this.votes,
   });
 
   @override
@@ -73,7 +74,7 @@ class ImagePoster extends StatelessWidget {
             CachedNetworkImage(
               imageUrl: "$IMAGE_URL${movieDetail.backdropPath}",
               width: double.infinity,
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
             Positioned.fill(
               child: Row(
@@ -96,7 +97,7 @@ class ImagePoster extends StatelessWidget {
                           height: 16,
                         ),
                         Text(
-                          "${votes} Votes",
+                          "$votes Votes",
                           style: ConfigTextStyle.boldTextStyle(20, textColor),
                         ),
                       ],

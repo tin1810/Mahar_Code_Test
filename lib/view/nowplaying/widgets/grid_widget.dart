@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/api_constant.dart';
 import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/view/home/widgets/grid_view_widget.dart';
-import 'package:mahar_code_test/vo/now_playing_vo.dart';
+import 'package:mahar_code_test/vo/movie_vo.dart';
 import '../../detail/detail_page.dart';
 
 class GridWidget extends StatelessWidget {

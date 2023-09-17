@@ -41,8 +41,8 @@ class GridViewWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            IMDBWidget(),
-            SizedBox(
+            const IMDBWidget(),
+            const SizedBox(
               width: 4,
             ),
             Text(

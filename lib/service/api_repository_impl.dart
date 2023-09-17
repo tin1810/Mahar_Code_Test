@@ -4,14 +4,14 @@ import 'package:mahar_code_test/config/api_constant.dart';
 import 'package:mahar_code_test/service/api_repository.dart';
 import 'package:mahar_code_test/vo/genre_vo.dart';
 import 'package:mahar_code_test/vo/movie_detail_vo.dart';
-import 'package:mahar_code_test/vo/now_playing_vo.dart';
+import 'package:mahar_code_test/vo/movie_vo.dart';
 
 class ApiRepositoryImpl extends ApiRepository {
   final _dio = Dio(BaseOptions(
       baseUrl: BASE_URL,
-      connectTimeout: Duration(minutes: 1),
-      receiveTimeout: Duration(minutes: 1),
-      sendTimeout: Duration(minutes: 1),
+      connectTimeout: const Duration(minutes: 1),
+      receiveTimeout: const Duration(minutes: 1),
+      sendTimeout: const Duration(minutes: 1),
       contentType: 'application/json',
       headers: {
         'Accept': 'application/json; charset=UTF-8',

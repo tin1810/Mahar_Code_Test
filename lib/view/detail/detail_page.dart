@@ -7,7 +7,7 @@ import 'package:mahar_code_test/view/detail/widgets/genre_widget.dart';
 import 'package:mahar_code_test/view/detail/widgets/image_poster.dart';
 import 'package:mahar_code_test/view/detail/widgets/movie_title_widget.dart';
 import 'package:mahar_code_test/view/detail/widgets/story_widget.dart';
-import 'package:mahar_code_test/vo/now_playing_vo.dart';
+import 'package:mahar_code_test/vo/movie_vo.dart';
 import 'package:provider/provider.dart';
 
 class DetailPage extends StatelessWidget {

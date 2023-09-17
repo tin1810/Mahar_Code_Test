@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mahar_code_test/config/api_constant.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
-import 'package:mahar_code_test/vo/now_playing_vo.dart';
+import 'package:mahar_code_test/vo/movie_vo.dart';
 
 import 'imdb_widget.dart';
 
@@ -39,7 +39,7 @@ class MovieTitleWidget extends StatelessWidget {
                               "$IMAGE_URL${movieDetail.posterPath}"),
                           fit: BoxFit.cover)),
                 ),
-                Container(
+                SizedBox(
                   width: 250,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,7 +85,7 @@ class MovieTitleWidget extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
                             child: Text(
-                              "${duration} mins",
+                              "$duration mins",
                               style: ConfigTextStyle.boldTextStyle(
                                   15, textGreyColor),
                             ),

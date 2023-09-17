@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
-import 'package:mahar_code_test/config/config_route.dart';
-import 'package:mahar_code_test/view/detail/detail_page.dart';
-import 'package:mahar_code_test/view/detail/widgets/genre_widget.dart';
 import 'package:mahar_code_test/view/home/widgets/genre_list_widget.dart';
-import 'package:mahar_code_test/view/home/widgets/grid_view_widget.dart';
+
 import 'package:mahar_code_test/view/home/widgets/tabs_title_widget.dart';
 import 'package:mahar_code_test/vo/genre_vo.dart';
-import 'package:mahar_code_test/vo/now_playing_vo.dart';
+import 'package:mahar_code_test/vo/movie_vo.dart';
 
 import '../home/widgets/image_slider_widget.dart';
 import 'widgets/grid_widget.dart';

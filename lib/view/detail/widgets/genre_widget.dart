@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
-import 'package:mahar_code_test/vo/genre_vo.dart';
 
 class GenreWidget extends StatelessWidget {
   const GenreWidget({

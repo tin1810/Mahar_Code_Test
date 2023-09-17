@@ -6,7 +6,7 @@ import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/view/detail/detail_page.dart';
 import 'package:mahar_code_test/view/home/widgets/image_widget.dart';
-import 'package:mahar_code_test/vo/now_playing_vo.dart';
+import 'package:mahar_code_test/vo/movie_vo.dart';
 
 class ImageSliderWidget extends StatefulWidget {
   final List<MovieVO> movieList;

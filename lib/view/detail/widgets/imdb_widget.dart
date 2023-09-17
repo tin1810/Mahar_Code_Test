@@ -12,7 +12,6 @@ class IMDBWidget extends StatelessWidget {
     return Container(
       height: 20,
       width: 30,
-      // margin: const EdgeInsets.only(left: 16, right: 10, top: 10),
       decoration: BoxDecoration(
           color: yellowColor, borderRadius: BorderRadius.circular(5)),
       child: Center(
