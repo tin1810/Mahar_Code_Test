@@ -30,6 +30,7 @@ class DetailPage extends StatelessWidget {
                         provider.toggleFavorite();
                       },
                       isFavorite: provider.isFavorite,
+                      votes: provider.movieDetailVO?.voteCount ?? 0,
                     )),
             MovieTitleWidget(
               movieDetail: movieDetail,

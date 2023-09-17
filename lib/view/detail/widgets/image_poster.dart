@@ -10,10 +10,12 @@ class ImagePoster extends StatelessWidget {
   final MovieVO movieDetail;
   final Function onClicked;
   final bool isFavorite;
+  final int votes;
   const ImagePoster({
     super.key,
     required this.movieDetail,
-    required this.onClicked, required this.isFavorite,
+    required this.onClicked,
+    required this.isFavorite, required this.votes,
   });
 
   @override
@@ -33,19 +35,19 @@ class ImagePoster extends StatelessWidget {
             onPressed: () {
               onClicked();
             },
-            icon:  Padding(
+            icon: Padding(
               padding: const EdgeInsets.only(right: 16),
-              child:
-              isFavorite? const Icon(
-                Icons.favorite,
-                color: redColor,
-                size: 30,
-              ):
-               const Icon(
-                Icons.favorite_border,
-                color: redColor,
-                size: 30,
-              ),
+              child: isFavorite
+                  ? const Icon(
+                      Icons.favorite,
+                      color: redColor,
+                      size: 30,
+                    )
+                  : const Icon(
+                      Icons.favorite_border,
+                      color: redColor,
+                      size: 30,
+                    ),
             ))
       ],
       leading: Container(
@@ -94,7 +96,7 @@ class ImagePoster extends StatelessWidget {
                           height: 16,
                         ),
                         Text(
-                          "21 Votes",
+                          "${votes} Votes",
                           style: ConfigTextStyle.boldTextStyle(20, textColor),
                         ),
                       ],
