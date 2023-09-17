@@ -20,38 +20,48 @@ class DetailPage extends StatelessWidget {
       create: (context) => DetailProvider(movieDetail.id ?? 2),
       child: Scaffold(
         backgroundColor: bgColor,
-        body: CustomScrollView(
-          primary: true,
-          slivers: [
-            Consumer<DetailProvider>(
-                builder: (context, provider, child) => ImagePoster(
+        body: Selector<DetailProvider, bool>(
+            selector: (context, provider) => provider.isLoading,
+            builder: (context, isLoading, child) {
+              if (isLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else {
+                return CustomScrollView(
+                  primary: true,
+                  slivers: [
+                    Consumer<DetailProvider>(
+                        builder: (context, provider, child) => ImagePoster(
+                              movieDetail: movieDetail,
+                              onClicked: () {
+                                provider.toggleFavorite();
+                              },
+                              isFavorite: provider.isFavorite,
+                              votes: provider.movieDetailVO?.voteCount ?? 0,
+                            )),
+                    MovieTitleWidget(
                       movieDetail: movieDetail,
-                      onClicked: () {
-                        provider.toggleFavorite();
-                      },
-                      isFavorite: provider.isFavorite,
-                      votes: provider.movieDetailVO?.voteCount ?? 0,
-                    )),
-            MovieTitleWidget(
-              movieDetail: movieDetail,
-            ),
-            Consumer<DetailProvider>(
-                builder: (context, provider, child) => GenreWidget(
-                    items: provider.movieDetailVO?.genres
-                            ?.map((e) => e.name ?? "")
-                            .toList() ??
-                        [])),
-            Consumer<DetailProvider>(
-                builder: (context, provider, child) => StoryWidget(
-                      isReadMore: provider.isReadMore,
-                      onClicked: () {
-                        provider.toggleReadMore();
-                      },
-                      movieStory: movieDetail.overview ?? "",
-                    )),
-            ActorsListWiget(items: Actors),
-          ],
-        ),
+                    ),
+                    Consumer<DetailProvider>(
+                        builder: (context, provider, child) => GenreWidget(
+                            items: provider.movieDetailVO?.genres
+                                    ?.map((e) => e.name ?? "")
+                                    .toList() ??
+                                [])),
+                    Consumer<DetailProvider>(
+                        builder: (context, provider, child) => StoryWidget(
+                              isReadMore: provider.isReadMore,
+                              onClicked: () {
+                                provider.toggleReadMore();
+                              },
+                              movieStory: movieDetail.overview ?? "",
+                            )),
+                    ActorsListWiget(items: Actors),
+                  ],
+                );
+              }
+            }),
       ),
     );
   }

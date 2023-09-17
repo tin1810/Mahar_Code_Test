@@ -4,6 +4,7 @@ import 'package:mahar_code_test/config/config_color.dart';
 import 'package:mahar_code_test/config/config_route.dart';
 import 'package:mahar_code_test/config/config_text_style.dart';
 import 'package:mahar_code_test/provider/movie_provider.dart';
+import 'package:mahar_code_test/view/detail/detail_page.dart';
 import 'package:mahar_code_test/view/search/widgets/search_list_tile.dart';
 import 'package:provider/provider.dart';
 
@@ -74,7 +75,13 @@ class SearchPage extends StatelessWidget {
                         itemCount: provider.searchResults.length,
                         itemBuilder: (context, index) {
                           return InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Routes.transition(
+                                  context,
+                                  DetailPage(
+                                      movieDetail:
+                                          provider.searchResults[index]));
+                            },
                             child: SearchListTileWidget(
                               title:
                                   provider.searchResults[index].originalTitle ??

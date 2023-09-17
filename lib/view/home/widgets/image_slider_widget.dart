@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:mahar_code_test/config/api_constant.dart';
+import 'package:mahar_code_test/config/config_route.dart';
+import 'package:mahar_code_test/view/detail/detail_page.dart';
 import 'package:mahar_code_test/view/home/widgets/image_widget.dart';
 import 'package:mahar_code_test/vo/now_playing_vo.dart';
 
@@ -18,8 +20,14 @@ class ImageSliderWidget extends StatelessWidget {
     return CarouselSlider(
         items: List.generate(
           firstFiveMovies.length,
-          (index) => ImageWidget(
-            imageUrl: "$IMAGE_URL${firstFiveMovies[index].backdropPath}",
+          (index) => GestureDetector(
+            onTap: () {
+              Routes.transition(
+                  context, DetailPage(movieDetail: movieList[index]));
+            },
+            child: ImageWidget(
+              imageUrl: "$IMAGE_URL${firstFiveMovies[index].backdropPath}",
+            ),
           ),
         ),
         options: CarouselOptions(

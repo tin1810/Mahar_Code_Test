@@ -41,6 +41,7 @@ class GenreWidget extends StatelessWidget {
                   child: Center(
                     child: Text(
                       e,
+                      textAlign: TextAlign.center,
                       style: ConfigTextStyle.boldTextStyle(12, textColor),
                     ),
                   ),
